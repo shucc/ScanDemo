@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ScanDemo</string>
+    <string name="activity_scan_title">扫一扫</string>
+    <string name="activity_scan_description">将二维码放入框内，即可自动扫码</string>
+    <string name="activity_scan_error_prompt">打开相机错误，请重试！</string>
+    <string name="permission_cus_scan">为了您能正常使用扫一扫功能，需要以下权限</string>
+</resources>
