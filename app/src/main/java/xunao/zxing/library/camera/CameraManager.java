@@ -201,4 +201,40 @@ public class CameraManager {
         }
         return null;
     }
+
+    public void openLight() {
+        if(camera != null) {
+            Camera.Parameters parameter = camera.getParameters();
+            parameter.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+            camera.setParameters(parameter);
+        }
+    }
+
+    public void closeLight() {
+        if(camera != null) {
+            Camera.Parameters parameter = camera.getParameters();
+            parameter.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+            camera.setParameters(parameter);
+        }
+    }
+
+    public boolean openHDR() {
+        if (null != camera) {
+            if (camera.getParameters().getSupportedSceneModes().contains(Camera.Parameters.SCENE_MODE_HDR)) {
+                Camera.Parameters parameter = camera.getParameters();
+                parameter.setSceneMode(Camera.Parameters.SCENE_MODE_HDR);
+                camera.setParameters(parameter);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void closeHDR() {
+        if (null != camera) {
+            Camera.Parameters parameter = camera.getParameters();
+            parameter.setSceneMode(Camera.Parameters.SCENE_MODE_AUTO);
+            camera.setParameters(parameter);
+        }
+    }
 }
