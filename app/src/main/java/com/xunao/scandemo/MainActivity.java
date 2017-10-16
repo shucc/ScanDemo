@@ -1,9 +1,8 @@
 package com.xunao.scandemo;
 
-import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -69,7 +68,7 @@ public class MainActivity extends BaseScanActivity {
     @Override
     public void getResult(String result) {
         if (!TextUtils.isEmpty(result)) {
-            Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT).show();
+            ScanSuccessActivity.launch(this, result);
         }
         stopScan();
         resumeScen();

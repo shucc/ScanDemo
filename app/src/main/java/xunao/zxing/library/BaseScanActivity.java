@@ -1,7 +1,6 @@
 package xunao.zxing.library;
 
 import android.graphics.Rect;
-import android.hardware.Camera;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -62,10 +61,6 @@ public abstract class BaseScanActivity extends AppCompatActivity implements Surf
     private boolean isHasSurface = false;
 
     protected abstract void getResult(String result);
-
-    static {
-        System.loadLibrary("iconv");
-    }
 
     /**
      * 初始化
@@ -196,7 +191,7 @@ public abstract class BaseScanActivity extends AppCompatActivity implements Surf
             // Creating the handler starts the preview, which can also throw a
             // RuntimeException.
             if (handler == null) {
-                handler = new CaptureActivityHandler(BaseScanActivity.this, cameraManager, DecodeThread.ALL_MODE);
+                handler = new CaptureActivityHandler(BaseScanActivity.this, cameraManager, DecodeThread.QRCODE_MODE);
             }
 
             initCrop();

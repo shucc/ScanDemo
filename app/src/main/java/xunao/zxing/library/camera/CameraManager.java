@@ -16,8 +16,6 @@
 
 package xunao.zxing.library.camera;
 
-import java.io.IOException;
-
 import android.content.Context;
 import android.graphics.Point;
 import android.hardware.Camera;
@@ -25,6 +23,8 @@ import android.hardware.Camera.Size;
 import android.os.Handler;
 import android.util.Log;
 import android.view.SurfaceHolder;
+
+import java.io.IOException;
 
 import xunao.zxing.library.camera.open.OpenCameraInterface;
 
@@ -203,7 +203,7 @@ public class CameraManager {
     }
 
     public void openLight() {
-        if(camera != null) {
+        if (camera != null) {
             Camera.Parameters parameter = camera.getParameters();
             parameter.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
             camera.setParameters(parameter);
@@ -211,7 +211,7 @@ public class CameraManager {
     }
 
     public void closeLight() {
-        if(camera != null) {
+        if (camera != null) {
             Camera.Parameters parameter = camera.getParameters();
             parameter.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
             camera.setParameters(parameter);
