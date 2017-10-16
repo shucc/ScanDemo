@@ -62,6 +62,10 @@ public abstract class BaseScanActivity extends AppCompatActivity implements Surf
 
     protected abstract void getResult(String result);
 
+    static {
+        System.loadLibrary("iconv");
+    }
+
     /**
      * 初始化
      */
@@ -82,7 +86,7 @@ public abstract class BaseScanActivity extends AppCompatActivity implements Surf
                 Animation.RELATIVE_TO_PARENT, 0.0f,
                 Animation.RELATIVE_TO_PARENT, 0.0f,
                 Animation.RELATIVE_TO_PARENT, 0.9f);
-        animation.setDuration(4500);
+        animation.setDuration(2500);
         animation.setRepeatCount(-1);
         animation.setRepeatMode(Animation.RESTART);
         scanLine.startAnimation(animation);

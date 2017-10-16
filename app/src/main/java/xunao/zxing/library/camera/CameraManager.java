@@ -237,4 +237,10 @@ public class CameraManager {
             camera.setParameters(parameter);
         }
     }
+
+    public void printParamters() {
+        if (null != camera) {
+            Camera.Parameters parameters = camera.getParameters();
+        }
+    }
 }
